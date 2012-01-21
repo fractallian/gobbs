@@ -1,4 +1,14 @@
 Gobbs::Application.routes.draw do
+
+  resources :games, :only => [:create, :show, :index] do
+    member do
+      get :moves
+      post :declare_winner
+    end
+  end
+  resources :moves, :only => [:create, :show]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
