@@ -1,0 +1,46 @@
+-
+  id: type
+  items:
+    - 
+      text: Single Player
+      href: single
+    -
+      text: Multiplayer
+      href: multi
+-
+  id: single
+  items:
+    -
+      text: Hard
+      class: 'start'
+      data:
+        difficulty: 3
+    -
+      text: Medium
+      class: 'start'
+      data:
+        game_type: cpu
+        difficulty: 2
+    -
+      text: Easy
+      class: 'start'
+      data:
+        game_type: cpu
+        difficulty: 1
+-
+  id: multi
+  items:
+    -
+      text: Online
+      class: 'start'
+      data:
+        game_type: online
+    -
+      text: VS
+      class: 'start'
+      data:
+        game_type: VS
+
+
+
+

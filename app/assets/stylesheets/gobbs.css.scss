@@ -1,0 +1,31 @@
+// Place all the styles related to the gobbs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$stackwidth: 140px;
+
+.stack {
+  width: $stackwidth;
+  height: $stackwidth;
+  background: #CCC;
+
+}
+.player {
+  float: left;
+}
+#scene {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#board {
+  width: $stackwidth * 4;
+  float: left;
+  margin: 0 50px;
+  .row {
+    height: $stackwidth;
+    .stack {
+      float: left;
+    }
+  }
+}

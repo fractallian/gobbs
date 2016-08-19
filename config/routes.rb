@@ -1,5 +1,7 @@
 Gobbs::Application.routes.draw do
 
+  root :to => "gobbs#index"  
+
   resources :games, :only => [:create, :show, :index] do
     member do
       get :moves

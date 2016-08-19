@@ -1,0 +1,18 @@
+= game_selection_tree
+
+= jqm :page, {}, :id => :game do
+  = jqm :content do
+    #scene
+    #player1.player
+      .stack
+      .stack
+      .stack
+    #board
+      - 4.times do
+        .row
+          - 4.times do 
+            .stack
+    #player2.player
+      .stack
+      .stack
+      .stack

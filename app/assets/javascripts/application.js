@@ -4,6 +4,19 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+
+// require ./lib/jq.mobi.min.js
+//= require ./lib/jquery.min.js
+//= require ./lib/jquery.mobile.min.js
+//= require ./lib/underscore.min.js
+//= require ./lib/backbone.min.js
+// require ./lib/kinetic.min.js
+//= require ./lib/sprite.js
+//= require ./lib/namespace.js
+
+
+
+
+//= require ./gobbs.js
+
+

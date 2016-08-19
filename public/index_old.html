@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>gobbs</title>
+  <script type="text/javascript" src="compiled/gobbs.js"></script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script type="text/javascript">
+  (function() {
+    gobbs.start();
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+  
+
+  
+  
+  window.fbAsyncInit = function() {
+    
+    FB.init({ 
+      appId: '345270175502066', 
+      status: true, 
+      cookie: true,
+      xfbml: true,
+      oauth: true
+    });
+    FB.Event.subscribe('auth.statusChange', handleResponseChange);
+  };
+
+  function handleResponseChange(response) {
+    console.log("response changed");
+    document.body.className = response.authResponse ? 'connected' : 'not_connected';
+    if (response.authResponse) {
+      console.log(response);
+      gobbs.showOnlineVS();
+      updateUserInfo(response);
+    } else {
+      gobbs.showFbLogin();
+    }
+  }
+
+  function loginUser() {    
+    FB.login(function(response) { document.write("login"); }, {scope:'email'});     
+  }
+  function sendRequest() {
+    FB.ui({
+      method: 'apprequests',
+      message: 'invites you to learn how to make your mobile web app social',
+    }, 
+    function(response) {
+      console.log('sendRequest response: ', response);
+    });
+  }
+  
+  function updateUserInfo(response) {
+    FB.api('/me', function(response) {
+      //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + response.name;
+      console.log(response);
+    });
+  }
+
+  
+</script>
+
+
+
+</body>
+</html>
